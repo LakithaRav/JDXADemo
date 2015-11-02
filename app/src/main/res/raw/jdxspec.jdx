@@ -1,0 +1,26 @@
+JDX_DATABASE JDX:jdbc:sqldroid://data//data/demo.olc.com.jdxademo/databases/olcdemo.db;USER=sa;PASSWORD=sa;JDX_DBTYPE=SQLITE;
+DATABASE_VERSION 8
+JDX_OBJECT_MODEL_PACKAGE demo.olc.com.jdxademo.model
+;
+REM ************************************************************************
+
+CLASS .WishItem TABLE WishItem
+ PRIMARY_KEY itemId
+ SQLMAP FOR itemId SQLTYPE 'INTEGER PRIMARY KEY AUTOINCREMENT'
+ RDBMS_GENERATED itemId
+ RELATIONSHIP list REFERENCES .WishList WITH listId
+;
+
+COLLECTION_CLASS WishItemsCollection COLLECTION_TYPE JAVACOLLECTION ELEMENT_CLASS .WishItem
+  PRIMARY_KEY listId
+  ORDERBY_DESC itemId
+;
+
+CLASS .WishList TABLE WishList
+ PRIMARY_KEY listId
+ SQLMAP FOR listId SQLTYPE 'INTEGER PRIMARY KEY AUTOINCREMENT'
+ RDBMS_GENERATED listId
+ RELATIONSHIP items REFERENCES WishItemsCollection BYVALUE WITH listId
+;
+
+SEQUENCE WishListIdSequence MAX_INCREMENT 1

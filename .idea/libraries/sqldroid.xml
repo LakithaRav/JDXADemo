@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sqldroid">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/sqldroid.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
