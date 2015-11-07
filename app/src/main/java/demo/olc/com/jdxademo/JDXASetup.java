@@ -11,7 +11,8 @@ public class JDXASetup extends BaseAppSpecificJDXSetup {
 
     public static void initialize() {
         setORMFileResourceId(ormId);
-        setJdxForAndroidLicenseKey(ormId, "aPE01.0cCJDXEdU6E6885Fu5i7d5uTdzevRloR9Tu7znRskRgNJDXi7LY122");
+//        setJdxForAndroidLicenseKey(ormId, "aPE01.0cCJDXEdU6E6885Fu5i7d5uTdzevRloR9Tu7znRskRgNJDXi7LY122");
+        setJdxForAndroidLicenseKey(ormId, "VPP01.0cCdNpNaU0ulc85uzulszsupzjdxRdNpuJDXi7LYI3ObBZ5nGI7438");
         setForceCreateSchema(ormId, false);
         setDebugLevel(ormId, 3);
     }

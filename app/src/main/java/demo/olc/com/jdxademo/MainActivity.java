@@ -54,36 +54,89 @@ public class MainActivity extends AppCompatActivity {
         // This is a utility class to easily mange persistently unique Named Sequence values.
         JDXSeqUtil wishListSeqUtil = new JDXSeqUtil("WishListIdSequence", jdxSetup, 1);
 
+        // First delete all the existing WishList objects along with the related WishItem objects
+        // comment this line if you like
+        jdxHelper.delete2(wishListClassName, null);
+
         // Create and save a WishList with a few WishItems
+        // Will use 'Deep Insert' approach to minimize the database access cycles
         WishList wishList = new WishList("My wishes");
 
-        // Get the database Id of inserting WishList object
+        //Unique id through a Sequence Generator
         int wishListId = (int) wishListSeqUtil.getNextSeq();
 
         // Adding couple of items to the wish-list
-        ArrayList<WishItem> wishItems = new ArrayList<WishItem>();
-        wishItems.add (new WishItem("My wish #1", wishListId));
-        wishItems.add (new WishItem("My wish #2", wishListId));
-        wishItems.add (new WishItem("My wish #3", wishListId));
-        wishItems.add (new WishItem("My wish #4", wishListId));
+        ArrayList<WishItem> newWishItems = new ArrayList<WishItem>();
+        newWishItems.add (new WishItem("My wish #1", wishListId));
+        newWishItems.add (new WishItem("My wish #2", wishListId));
+        newWishItems.add (new WishItem("My wish #3", wishListId));
+        newWishItems.add (new WishItem("My wish #4", wishListId));
 
         // Add the items to the wishList
-        wishList.setItems(wishItems);
+        wishList.setItems(newWishItems);
 
         // Bulk insert the wish-list along with the items, this is possible since we have specified 'BYVALUE' option in our jdxspec.jdx file
         // deep insert; all the related WishItems will also be saved
         jdxHelper.insert(wishList, true);
 
-        // Retrieve all WishItems independently
-        // ArrayList<WishItem> items = (ArrayList<WishItem>) jdxHelper.getObjects(wishItemClassName, null);
-        // JXUtilities.printQueryResults(items);
+        /**
+         * Listed down below are different ways that you access you database record using JDXA
+         */
 
-        // Retrieve all WishItems independently but don't further retrieve WishItems of the related WishList
+        // Retrieve all the WishList objects along with the related WishItem objects (Deep Query)
+        List<WishList> wishLists =  jdxHelper.getObjects(wishListClassName, null);
+        JXUtilities.printQueryResults(wishLists);
 
-        // Avoiding back pointer circularity
-        // Otherwise there will be an endless loop of parent to child, child to parent reference in the retrieving data objects
+        // Retrieve all the WishList objects without the related WishItem objects (Shallow Query)
+        wishLists = jdxHelper.getObjects(wishListClassName, null, JDXS.ALL, JDXS.FLAG_SHALLOW, null);
+        JXUtilities.printQueryResults(wishLists);
+
+        // Retrieve all the WishItem objects along with the related WishList objects (Deep Query)
+        List<WishItem> wishItems =  jdxHelper.getObjects(wishItemClassName, null);
+        JXUtilities.printQueryResults(wishItems);
+
+        // Retrieve all WishItem objects independently without the related WishList objects (Shallow Query)
+        wishItems = jdxHelper.getObjects(wishItemClassName, null, JDXS.ALL, JDXS.FLAG_SHALLOW, null);
+        JXUtilities.printQueryResults(wishItems);
+
+        // Now create and save a new WishItem independently for a known WishList (Shallow Insert)
+        WishItem wishItem = new WishItem("My wish #5", wishListId);
+        jdxHelper.insert(wishItem, false);
+
+        // Get the number of WishItem objects in the database (Aggregate Query)
+        Integer count = (Integer) jdxHelper.getObjectCount(wishItemClassName, "itemId", null);
+        JXUtilities.log("\n-- Number of WishItems=" + count + " --\n"); // count should be 5
+
+        // Retrieve a particular WishList object along with the related WishItem objects (Deep Query)
+        wishList = (WishList) jdxHelper.getObjectById(wishListClassName, "listId=" + wishListId, true, null);
+        JXUtilities.printObject(wishList, 0, null); // It should also show the "My wish #5" WishItem
+
+        // Modify the name of a WishList object and update it in the database (Shallow Update)
+        wishList.setName("My updated wishes");
+        jdxHelper.update(wishList, false);
+
+        // Retrieve a particular WishList object without the related WishItem objects (Shallow Query)
+        wishList = (WishList) jdxHelper.getObjectById(wishListClassName, "listId=" + wishListId, false, null);
+        JXUtilities.printObject(wishList, 0, null); // It should show "My updated wishes"
+
+
+        // Create and save an empty WishList (Deep or Shallow Insert)
+        wishList = new WishList("My empty wishes");
+        wishListId = (int) wishListSeqUtil.getNextSeq(); // Unique id through a Sequence Generator
+        wishList.setListId(wishListId);
+
+        jdxHelper.insert(wishList, true); // no WishItems are there to be saved
+
+
+        //Notice that every time we ran a Deep Query the relationship between the two objects WishList and WishItem resulted
+        //in an endless cycle of cross referencing. To avoid this we have to tell JDXA to ignore the items that get cycled
+        //Following is how to do that;
+
+        // Retrieve all WishItems independently but don't further retrieve WishItems of
+        // the related WishLists (Directed Query)
+        // This is an example of directed query where you can control the depth of the query operation.
         List ignoreList = new ArrayList();
-        ignoreList.add(wishListClassName); // the class name
+        ignoreList.add(wishListClassName); // the containing class name
         ignoreList.add("items");  // the name of the attribute to be ignored
         List queryOption1 = new ArrayList();
         queryOption1.add(JDXS.IGNORE);
@@ -91,17 +144,8 @@ public class MainActivity extends AppCompatActivity {
         List queryDetails = new ArrayList();
         queryDetails.add(queryOption1);
 
-        // Retrieving all the item from the database
-        ArrayList<WishItem> items = (ArrayList<WishItem>) jdxHelper.getObjects(wishItemClassName, null, JDXS.ALL, JDXS.FLAG_DEEP, queryDetails);
-        JXUtilities.printQueryResults(items);
-
-        // Retrieve a particular WishList with Primary Key along with all the related WishItems
-        wishList = (WishList) jdxHelper.getObjectById(wishListClassName, "listId=" + wishListId, true, null);
-        JXUtilities.printObject(wishList, 0, null);
-
-        // Retrieve all the Wishlist lists fron the database, this will also retrieve Wishlist items of a Wishlist object as well
-        ArrayList<WishList> wishes = (ArrayList<WishList>) jdxHelper.getObjects(wishListClassName, null);
-        JXUtilities.printQueryResults(wishes);
+        wishItems = jdxHelper.getObjects(wishItemClassName, null, JDXS.ALL, JDXS.FLAG_DEEP, queryDetails);
+        JXUtilities.printQueryResults(wishItems);
     }
 
     @Override

@@ -10,6 +10,7 @@ public class WishItem {
     private String name;
     private WishList list;
 
+    // A no-arg constructor needed for JDX
     public WishItem() {
 
     }

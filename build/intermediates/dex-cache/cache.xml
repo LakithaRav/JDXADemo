@@ -2,6 +2,48 @@
 <items version="2" >
 
     <item
+        jar="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/libs/sqldroid.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a9fe2fb0cc398b53a136bbeb32381323f6265296">
+        <dex dex="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/pre-dexed/debug/sqldroid-3af785537489b7e303a322739c9b7c53c1c62fbd.jar" />
+    </item>
+    <item
+        jar="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/pre-dexed/debug/classes-a1473188ec8bc4c1479a06369d82999924b37ce0.jar" />
+    </item>
+    <item
+        jar="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/libs/JDXAndroid.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6edbdb16d965e5b38eaff1a25d454e6bfc03eab8">
+        <dex dex="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/pre-dexed/debug/JDXAndroid-7b4cdf82353b9d83e51f3c882dc515154baf94d8.jar" />
+    </item>
+    <item
+        jar="/Users/Lakitha/Downloads/JDXADemo3/app/libs/sqldroid.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a9fe2fb0cc398b53a136bbeb32381323f6265296">
+        <dex dex="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/pre-dexed/debug/sqldroid-5a8a5fbba37f49f1bccbcdfd3325db5c75e955e1.jar" />
+    </item>
+    <item
+        jar="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/pre-dexed/debug/classes-4b1c52485c141c680794f28fa200bf098987e439.jar" />
+    </item>
+    <item
+        jar="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-eec8c6e1ce6db123b9c872773ba730daf2dd2140.jar" />
+    </item>
+    <item
         jar="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -16,6 +58,13 @@
         <dex dex="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-e8d5c586a94efaf1720b7475490b1228cf12b725.jar" />
     </item>
     <item
+        jar="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/Users/Lakitha/Documents/DEV_Android/JDXADemo/app/build/intermediates/pre-dexed/debug/classes-30c38e5a94122f88e1b65a5076cfc33b98036fe1.jar" />
+    </item>
+    <item
         jar="/Users/Lakitha/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -28,20 +77,6 @@
         revision="22.0.1"
         sha1="6edbdb16d965e5b38eaff1a25d454e6bfc03eab8">
         <dex dex="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/pre-dexed/debug/JDXAndroid-54628b6e2f4098742c79c348db6f5392d966a966.jar" />
-    </item>
-    <item
-        jar="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/pre-dexed/debug/classes-4b1c52485c141c680794f28fa200bf098987e439.jar" />
-    </item>
-    <item
-        jar="/Users/Lakitha/Downloads/JDXADemo3/app/libs/sqldroid.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a9fe2fb0cc398b53a136bbeb32381323f6265296">
-        <dex dex="/Users/Lakitha/Downloads/JDXADemo3/app/build/intermediates/pre-dexed/debug/sqldroid-5a8a5fbba37f49f1bccbcdfd3325db5c75e955e1.jar" />
     </item>
 
 </items>
