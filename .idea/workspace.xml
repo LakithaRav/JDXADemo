@@ -27,10 +27,10 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/demo/olc/com/jdxademo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18181819">
-              <caret line="83" column="11" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.2651515">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding>
-                <element signature="e#2224#2234#0" expanded="true" />
+                <element signature="e#2376#2386#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1480,8 +1480,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/demo/olc/com/jdxademo/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/demo/olc/com/jdxademo/JDXASetup.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/demo/olc/com/jdxademo/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1835,12 +1835,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/demo/olc/com/jdxademo/MainActivity.java</url>
-          <line>48</line>
+          <line>51</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/demo/olc/com/jdxademo/MainActivity.java</url>
-          <line>137</line>
+          <line>140</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -1860,10 +1860,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/demo/olc/com/jdxademo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18181819">
-          <caret line="83" column="11" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.2651515">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
-            <element signature="e#2224#2234#0" expanded="true" />
+            <element signature="e#2376#2386#0" expanded="true" />
           </folding>
         </state>
       </provider>

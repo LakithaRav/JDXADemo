@@ -19,6 +19,9 @@ import java.util.List;
 import demo.olc.com.jdxademo.model.WishItem;
 import demo.olc.com.jdxademo.model.WishList;
 
+/**
+ * This project uses JDXA ORM with two model classes: WishList and WishItem. There is a one-to-many relationship between WishList and WishItem.
+ */
 public class MainActivity extends AppCompatActivity {
 
     JDXSetup jdxSetup = null;
