@@ -1,8 +1,8 @@
 # JDXADemo
-JDX Android ORM Library Demo Project
+JDXA Android ORM Library Demo Project
 
 # What is JDXA?
-JDXA (i.e. JDXA for Android) is a flexible, easy-to-user ORM library product that simplifies and accelerate the development of Android applications. Developed by Software Tree (LLC), JDXA runs on JDX, the core object relational mapping technology which is use by NJDX for .Net JDX for Java and now JDXA for Android. 
+JDXA is a flexible, non-intrusive, and easy-to-use Object Relational Mapping (ORM) library product that simplifies and accelerates the development of Android apps. JDXA is a product of Software Tree. You may get a free trial version of JDXA SDK from http://www.softwaretree.com.
 
 ##Tutorial
 http://wp.me/p5X7bM-2w

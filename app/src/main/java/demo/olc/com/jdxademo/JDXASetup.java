@@ -14,7 +14,8 @@ public class JDXASetup extends BaseAppSpecificJDXSetup {
 //        setJdxForAndroidLicenseKey(ormId, "aPE01.0cCJDXEdU6E6885Fu5i7d5uTdzevRloR9Tu7znRskRgNJDXi7LY122");
         setJdxForAndroidLicenseKey(ormId, "VPP01.0cCdNpNaU0ulc85uzulszsupzjdxRdNpuJDXi7LYI3ObBZ5nGI7438");
         setForceCreateSchema(ormId, false);
-        setDebugLevel(ormId, 3);
+        //un-comment thie below line to enable debug mode, mode vary from 1 - 5
+        //setDebugLevel(ormId, 3);
     }
 
     public static JDXSetup getInstance(ContextWrapper contextWrapper) throws Exception {

@@ -20,7 +20,13 @@ import demo.olc.com.jdxademo.model.WishItem;
 import demo.olc.com.jdxademo.model.WishList;
 
 /**
- * This project uses JDXA ORM with two model classes: WishList and WishItem. There is a one-to-many relationship between WishList and WishItem.
+ * This class shows how JDXA ORM can be initialized and used for exchanging data of model
+ * class objects with a SQLite database on the Android platform.
+ *
+ * The project uses JDXA ORM with two model classes: WishList and WishItem.
+ * There is a one-to-many relationship between WishList and WishItem.
+ *
+ * Created by Lakitha on 10/30/15.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         jdxSetup = null;
     }
 
+    /**
+     * This method demonstrates various CRUD operations using JDXA ORM.
+     * It also demonstrates JDXA utility methods printObject and printQueryResults, which can
+     * easily display object graphs. You may check Logcat for the output.
+     */
     private void runDemo(JDXSetup jdxSetup) throws Exception {
 
         JDXHelper jdxHelper = new JDXHelper(jdxSetup);
