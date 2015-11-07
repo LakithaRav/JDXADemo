@@ -1,5 +1,5 @@
 # JDXADemo
-JDXA Android ORM Library Demo Project
+#####JDXA Android ORM Library Demo Project
 
 This project uses JDXA ORM with two model classes: WishList and WishItem. There is a one-to-many relationship between WishList and WishItem.
 
@@ -9,5 +9,5 @@ JDXA is a flexible, non-intrusive, and easy-to-use Object Relational Mapping (OR
 ##Tutorial
 http://wp.me/p5X7bM-2w
 
-###Note
-JDXA is used with the SQLDroid open source library, which is provided under the licensing terms mentioned in https://github.com/SQLDroid/SQLDroid/blob/master/LICENSE.
+####Note
+*JDXA is used with the SQLDroid open source library, which is provided under the licensing terms mentioned [here](https://github.com/SQLDroid/SQLDroid/blob/master/LICENSE)*
