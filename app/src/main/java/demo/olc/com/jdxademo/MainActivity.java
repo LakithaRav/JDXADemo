@@ -72,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
         // comment this line if you like
         jdxHelper.delete2(wishListClassName, null);
 
-        // Create and save a WishList with a few WishItems
-        // Will use 'Deep Insert' approach to minimize the database access cycles
-        WishList wishList = new WishList("My wishes");
-
         //Unique id through a Sequence Generator
         int wishListId = (int) wishListSeqUtil.getNextSeq();
+
+        // Create and save a WishList with a few WishItems
+        // Will use 'Deep Insert' approach to minimize the database access cycles
+        WishList wishList = new WishList("My wishes", wishListId);
 
         // Adding couple of items to the wish-list
         ArrayList<WishItem> newWishItems = new ArrayList<WishItem>();
@@ -135,9 +135,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Create and save an empty WishList (Deep or Shallow Insert)
-        wishList = new WishList("My empty wishes");
         wishListId = (int) wishListSeqUtil.getNextSeq(); // Unique id through a Sequence Generator
         wishList.setListId(wishListId);
+        wishList = new WishList("My empty wishes", wishListId);
 
         jdxHelper.insert(wishList, true); // no WishItems are there to be saved
 

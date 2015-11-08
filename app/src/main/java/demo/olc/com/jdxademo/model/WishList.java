@@ -15,8 +15,9 @@ public class WishList {
 
     }
 
-    public WishList(String _name)
+    public WishList(String _name, int _listid)
     {
+        this.listId = _listid;
         this.name = _name;
     }
 
