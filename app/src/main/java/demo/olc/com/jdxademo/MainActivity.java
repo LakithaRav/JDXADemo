@@ -140,12 +140,7 @@ public class MainActivity extends AppCompatActivity {
         wishList = new WishList("My empty wishes", wishListId);
 
         jdxHelper.insert(wishList, true); // no WishItems are there to be saved
-
-
-        //Notice that every time we ran a Deep Query the relationship between the two objects WishList and WishItem resulted
-        //in an endless cycle of cross referencing. To avoid this we have to tell JDXA to ignore the items that get cycled
-        //Following is how to do that;
-
+        
         // Retrieve all WishItems independently but don't further retrieve WishItems of
         // the related WishLists (Directed Query)
         // This is an example of directed query where you can control the depth of the query operation.
